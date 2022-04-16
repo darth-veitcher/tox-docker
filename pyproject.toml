@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tox-docker"
+version = "0.1.0"
+description = ""
+authors = ["Darth Veitcher <darth-veitcher@statemachine.ai>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+pylama = "^8.3.8"
+black = "^22.3.0"
+tox = "^3.25.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
