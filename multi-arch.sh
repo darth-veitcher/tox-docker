@@ -55,9 +55,9 @@ if [ ${PUSH} == true ]
 then
     docker manifest rm ${REPOSITORY} || true
     docker manifest create ${REPOSITORY} ${REPOSITORY}:latest
-    for i in $(docker images '${REPOSITORY}' --format '{{.Repository}}:{{.Tag}}'); 
+    for i in $(docker images ${REPOSITORY} --format '{{.Repository}}:{{.Tag}}'); 
     do 
-        echo "=== Pushing {i} ==="
+        echo "=== Pushing ${i} ==="
         docker push ${i} && \
         docker manifest create ${REPOSITORY} ${REPOSITORY}:latest --amend ${i} || true;
     done
